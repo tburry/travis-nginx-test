@@ -26,3 +26,4 @@ install:
 script:
   - nginx -h
   - cat /etc/nginx/nginx.conf
+  - nginx
