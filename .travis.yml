@@ -22,3 +22,6 @@ addons:
 
 install:
   - composer install
+
+script:
+  - echo "Hello world!"
