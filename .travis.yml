@@ -25,5 +25,6 @@ install:
 
 script:
   - nginx -h
+  - mkdir /usr/local/etc/nginx
   - cat /etc/nginx/nginx.conf
   - nginx
