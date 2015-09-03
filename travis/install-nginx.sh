@@ -4,7 +4,7 @@ set -e
 set -x
 
 USER=$(whoami)
-DIR=$(realpath $(dirname "$0"))
+DIR=$(readlink -f $(dirname "$0"))
 TRAVIS_PHP_VERSION=$(phpenv version-name)
 #DOCUMENT_ROOT=$(realpath "$DIR/../tests")
 PORT=9000
