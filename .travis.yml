@@ -7,10 +7,13 @@ php:
     - 7.0
     - hhvm
 
-sudo: false
+sudo: required
 
 matrix:
   fast_finish: true
+
+cache:
+  - apt
 
 addons:
   apt:
