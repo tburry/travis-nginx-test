@@ -7,7 +7,7 @@ php:
     - 7.0
     - hhvm
 
-sudo: required
+sudo: false
 
 matrix:
   fast_finish: true
@@ -24,4 +24,4 @@ install:
   - composer install
 
 script:
-  - echo "Hello world!"
+  - nginx -v
