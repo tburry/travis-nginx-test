@@ -24,4 +24,4 @@ install:
   - composer install
 
 script:
-  - nginx -v
+  - nginx -h
