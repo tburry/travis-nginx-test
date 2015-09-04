@@ -8,7 +8,7 @@ USER=$(whoami)
 PHP_VERSION=$(phpenv version-name)
 ROOT=$(realpath "$DIR/..")
 PORT=9000
-SERVER="/tmp/php/sock"
+SERVER="/tmp/php.sock"
 
 function tpl {
     sed \
