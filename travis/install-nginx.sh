@@ -30,7 +30,7 @@ mkdir "$DIR/var"
 tpl "$DIR/nginx.tpl.conf" "$DIR/nginx/nginx.conf"
 tpl "$DIR/fastcgi.tpl.conf" "$DIR/nginx/fastcgi.conf"
 
-cat "$DIR/nginx.tpl.conf" "$DIR/nginx/nginx.conf"
+cat "$DIR/nginx/nginx.conf"
 
 # Start nginx.
 nginx -h
