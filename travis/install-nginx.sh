@@ -31,7 +31,6 @@ if [ "$PHP_VERSION" = 'hhvm' ] || [ "$PHP_VERSION" = 'hhvm-nightly' ]
 then
     hhvm \
         --mode=daemon \
-        --user="$USER" \
         -vServer.Type=fastcgi \
         -vServer.Port="$PORT" \
         -vLog.File="/tmp/hhvm.log"
