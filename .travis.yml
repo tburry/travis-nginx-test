@@ -25,4 +25,4 @@ install:
   - travis/install-nginx.sh
 
 script:
-  - curl 'http://test.dev:8080/hello.php'
+  - curl -v 'http://localhost:8080/hello.php'
