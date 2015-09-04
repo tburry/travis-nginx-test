@@ -8,7 +8,7 @@ USER=$(whoami)
 PHP_VERSION=$(phpenv version-name)
 ROOT=$(realpath "$DIR/..")
 PORT=9000
-SERVER="localhost:$PORT"
+SERVER="/tmp/php/sock"
 
 function tpl {
     sed \
@@ -32,7 +32,7 @@ then
     hhvm \
         --mode=daemon \
         -vServer.Type=fastcgi \
-        -vServer.Port="$PORT" \
+        -vServer.FileSocket="$SERVER" \
         -vLog.File="/tmp/hhvm.log"
 else
     PHP_FPM_BIN="$HOME/.phpenv/versions/$PHP_VERSION/sbin/php-fpm"
