@@ -16,6 +16,8 @@ addons:
     packages:
       - nginx
       - realpath
+  hosts:
+      - localhost
 
 install:
   - composer install
