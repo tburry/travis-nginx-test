@@ -3,11 +3,29 @@
 set -e
 set -x
 
-USER=$(whoami)
 DIR=$(readlink -f $(dirname "$0"))
-TRAVIS_PHP_VERSION=$(phpenv version-name)
-#DOCUMENT_ROOT=$(realpath "$DIR/../tests")
+USER=$(whoami)
+PHP_VERSION=$(phpenv version-name)
+ROOT=$(readlink -f "$DIR/..")
 PORT=9000
 SERVER="127.0.0.1:$PORT"
 
+function tpl {
+    sed \
+        -e "s|{DIR}|$DIR|g" \
+        -e "s|{USER}|$USER|g" \
+        -e "s|{PHP_VERSION}|$PHP_VERSION|g" \
+        -e "s|{ROOT}|$ROOT|g" \
+        -e "s|{PORT}|$PORT|g" \
+        -e "s|{SERVER}|$SERVER|g" \
+        < $1 > $2
+}
+
+# Make some working directories.
 mkdir "$DIR/nginx"
+mkdir "$DIR/nginx/sites-enabled"
+mkdir "$DIR/var"
+
+# Build the default nginx config files.
+tpl "$DIR/nginx.tpl.conf" "$DIR/nginx/nginx.conf"
+tpl "$DIR/fastcgi.tpl.conf" "$DIR/nginx/fastcgi.conf"
