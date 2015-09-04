@@ -15,6 +15,7 @@ addons:
   apt:
     packages:
       - nginx
+      - realpath
 
 install:
   - composer install

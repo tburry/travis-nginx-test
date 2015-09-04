@@ -3,10 +3,10 @@
 set -e
 set -x
 
-DIR=$(readlink -f $(dirname "$0"))
+DIR=$(realpath $(dirname "$0"))
 USER=$(whoami)
 PHP_VERSION=$(phpenv version-name)
-ROOT=$(readlink -f "$DIR/..")
+ROOT=$(realpath "$DIR/..")
 PORT=9000
 SERVER="127.0.0.1:$PORT"
 
