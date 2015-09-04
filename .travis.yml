@@ -22,4 +22,4 @@ install:
   - travis/install-nginx.sh
 
 script:
-  - nginx -v
+  - curl 'http://localhost/hello.php'
