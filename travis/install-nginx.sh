@@ -26,13 +26,30 @@ mkdir "$DIR/nginx"
 mkdir "$DIR/nginx/sites-enabled"
 mkdir "$DIR/var"
 
+# Configure the PHP handler.
+if [ "$PHP_VERSION" = 'hhvm' ] || [ "$PHP_VERSION" = 'hhvm-nightly' ]
+then
+    hhvm \
+        --mode=daemon \
+        --user="$USER" \
+        -vServer.Type=fastcgi \
+        -vServer.Port="$PORT" \
+        -vLog.File="/tmp/hhvm.log"
+else
+    PHP_FPM_BIN="$HOME/.phpenv/versions/PHP_VERSION/sbin/php-fpm"
+    PHP_FPM_CONF="$DIR/nginx/php-fpm.conf"
+
+    # Build the php-fpm.conf.
+    tpl "$DIR/php-fpm.tpl.conf" "$PHP_FPM_CONF"
+
+    # Start php-fpm
+    "$PHP_FPM_BIN" --fpm-config "$PHP_FPM_CONF"
+fi
+
 # Build the default nginx config files.
 tpl "$DIR/nginx.tpl.conf" "$DIR/nginx/nginx.conf"
 tpl "$DIR/fastcgi.tpl.conf" "$DIR/nginx/fastcgi.conf"
 tpl "$DIR/default-site.tpl.conf" "$DIR/nginx/sites-enabled/default-site.conf"
 
-cat "$DIR/nginx/nginx.conf"
-
 # Start nginx.
-nginx -h
-nginx -p "$DIR/nginx" -c "$DIR/nginx/nginx.conf"
+nginx -c "$DIR/nginx/nginx.conf"
