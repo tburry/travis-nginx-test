@@ -36,7 +36,7 @@ then
         -vServer.Port="$PORT" \
         -vLog.File="/tmp/hhvm.log"
 else
-    PHP_FPM_BIN="$HOME/.phpenv/versions/PHP_VERSION/sbin/php-fpm"
+    PHP_FPM_BIN="$HOME/.phpenv/versions/$PHP_VERSION/sbin/php-fpm"
     PHP_FPM_CONF="$DIR/nginx/php-fpm.conf"
 
     # Build the php-fpm.conf.
