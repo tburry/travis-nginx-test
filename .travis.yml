@@ -14,7 +14,7 @@ cache:
 addons:
   apt:
     packages:
-      - nginx-full
+      - nginx
 
 install:
   - composer install
