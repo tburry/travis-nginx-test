@@ -21,8 +21,8 @@ addons:
       - test.dev
 
 install:
-  - composer install
+#  - composer install
   - travis/install-nginx.sh
 
 script:
-  - curl 'http://test.dev/hello.php'
+  - curl 'http://test.dev:8080/hello.php'
