@@ -30,7 +30,7 @@ mkdir "$DIR/var"
 if [ "$PHP_VERSION" = 'hhvm' ] || [ "$PHP_VERSION" = 'hhvm-nightly' ]
 then
     hhvm \
-        --mode=daemon \
+        --mode=server \
         --user="$USER" \
         -vServer.Type=fastcgi \
         -vServer.Port="$PORT" \
