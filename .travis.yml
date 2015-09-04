@@ -1,10 +1,10 @@
 language: php
 
 php:
-    - 5.4
-    - 5.5
-    - 5.6
-    - 7.0
+#    - 5.4
+#    - 5.5
+#    - 5.6
+#    - 7.0
     - hhvm
 
 sudo: false
@@ -29,4 +29,4 @@ install:
   - travis/install-nginx.sh
 
 script:
-  - curl -vs 'http://localhost:8080/hello.php' &> /dev/stdout
+  - curl -vsf 'http://localhost:8080/hello.php' &> /dev/stdout
