@@ -21,6 +21,4 @@ install:
   - travis/install-nginx.sh
 
 script:
-  - nginx -h
-  - cat /etc/nginx/nginx.conf
-#  - nginx
+  - nginx -v

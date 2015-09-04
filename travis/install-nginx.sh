@@ -29,3 +29,7 @@ mkdir "$DIR/var"
 # Build the default nginx config files.
 tpl "$DIR/nginx.tpl.conf" "$DIR/nginx/nginx.conf"
 tpl "$DIR/fastcgi.tpl.conf" "$DIR/nginx/fastcgi.conf"
+
+
+# Start nginx.
+nginx -p "$DIR/nginx" -c "$DIR/nginx/nginx.conf"
