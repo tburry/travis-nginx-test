@@ -35,4 +35,4 @@ cat "$DIR/nginx/nginx.conf"
 
 # Start nginx.
 nginx -h
-nginx -p "$DIR/nginx" -c "$DIR/nginx/nginx.conf"
+nginx -p "$DIR/nginx" -c "$DIR/nginx/nginx.conf" -t
