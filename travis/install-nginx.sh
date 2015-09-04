@@ -8,7 +8,7 @@ USER=$(whoami)
 PHP_VERSION=$(phpenv version-name)
 ROOT=$(realpath "$DIR/..")
 PORT=9000
-SERVER="127.0.0.1:$PORT"
+SERVER="localhost:$PORT"
 
 function tpl {
     sed \
