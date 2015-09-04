@@ -18,10 +18,11 @@ addons:
       - realpath
   hosts:
       - localhost
+      - test.dev
 
 install:
   - composer install
   - travis/install-nginx.sh
 
 script:
-  - curl 'http://localhost/hello.php'
+  - curl 'http://test.dev/hello.php'
