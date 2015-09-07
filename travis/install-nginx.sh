@@ -39,6 +39,8 @@ then
         --mode=daemon \
         --user="$USER" \
         --config="$HHVM_CONF"
+
+    sudo cat /tmp/hhvm.log
 else
     PHP_FPM_BIN="$HOME/.phpenv/versions/$PHP_VERSION/sbin/php-fpm"
     PHP_FPM_CONF="$DIR/nginx/php-fpm.conf"
@@ -58,7 +60,5 @@ tpl "$DIR/default-site.tpl.conf" "$DIR/nginx/sites-enabled/default-site.conf"
 # Start nginx.
 nginx -c "$DIR/nginx/nginx.conf"
 
-touch /tmp/hhvm.log
-cat /tmp/hhvm.log
 touch /tmp/error.log
 cat /tmp/error.log
