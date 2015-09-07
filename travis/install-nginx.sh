@@ -47,7 +47,7 @@ else
     tpl "$DIR/php-fpm.tpl.conf" "$PHP_FPM_CONF"
 
     # Start php-fpm
-    "$PHP_FPM_BIN" --fpm-config "$PHP_FPM_CONF"
+    sudo "$PHP_FPM_BIN" --fpm-config "$PHP_FPM_CONF"
 fi
 
 # Build the default nginx config files.
@@ -58,5 +58,4 @@ tpl "$DIR/default-site.tpl.conf" "$DIR/nginx/sites-enabled/default-site.conf"
 # Start nginx.
 sudo nginx -c "$DIR/nginx/nginx.conf"
 
-touch /tmp/error.log
-cat /tmp/error.log
+#cat /tmp/error.log
