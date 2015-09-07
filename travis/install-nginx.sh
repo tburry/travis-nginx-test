@@ -35,7 +35,7 @@ then
 
     cat "$HHVM_CONF"
 
-    hhvm \
+    sudo hhvm \
         --mode=daemon \
         --user="$USER" \
         --config="$HHVM_CONF"
