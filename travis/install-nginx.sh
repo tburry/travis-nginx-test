@@ -59,4 +59,5 @@ tpl "$DIR/default-site.tpl.conf" "$DIR/nginx/sites-enabled/default-site.conf"
 # Start nginx.
 sudo nginx -c "$DIR/nginx/nginx.conf"
 
-#cat /tmp/error.log
+sudo cat /tmp/error.log
+sudo cat /tmp/hhvm.log
