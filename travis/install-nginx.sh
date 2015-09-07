@@ -36,8 +36,6 @@ then
     cat "$HHVM_CONF"
 
     sudo hhvm \
-        --mode=daemon \
-        --user="$USER" \
         --config="$HHVM_CONF"
 
     sudo cat /tmp/hhvm.log
@@ -58,7 +56,7 @@ tpl "$DIR/fastcgi.tpl.conf" "$DIR/nginx/fastcgi.conf"
 tpl "$DIR/default-site.tpl.conf" "$DIR/nginx/sites-enabled/default-site.conf"
 
 # Start nginx.
-nginx -c "$DIR/nginx/nginx.conf"
+sudo nginx -c "$DIR/nginx/nginx.conf"
 
 touch /tmp/error.log
 cat /tmp/error.log
