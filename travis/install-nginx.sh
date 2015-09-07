@@ -36,7 +36,7 @@ then
     cat "$HHVM_CONF"
 
     sudo hhvm \
-        --mode=daemon
+        --mode=daemon \
         --config="$HHVM_CONF"
 
     sudo cat /tmp/hhvm.log
