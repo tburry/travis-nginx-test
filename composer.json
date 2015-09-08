@@ -1,6 +1,6 @@
 {
 	"name": "vanilla/travis-nginx-test",
-	"description": "A basic test for getting nginx running on Travis CI's container based infrastructure.",
+	"description": "A basic test for getting Nginx running on Travis CI's container based infrastructure.",
 	"license": "MIT",
 	"authors": [
 		{
