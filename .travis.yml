@@ -31,4 +31,3 @@ install:
 script:
   - curl -vsf 'http://localhost:8080/hello.php' &> /dev/stdout
   - sudo cat /tmp/error.log
-  - sudo cat /tmp/hhvm.log

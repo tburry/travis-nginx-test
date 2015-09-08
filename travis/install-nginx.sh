@@ -38,8 +38,6 @@ then
     sudo hhvm \
         --mode=daemon \
         --config="$HHVM_CONF"
-
-    sudo cat /tmp/hhvm.log
 else
     PHP_FPM_BIN="$HOME/.phpenv/versions/$PHP_VERSION/sbin/php-fpm"
     PHP_FPM_CONF="$DIR/nginx/php-fpm.conf"
