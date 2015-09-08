@@ -7,7 +7,7 @@ php:
 #    - 7.0
     - hhvm
 
-sudo: required
+sudo: false
 
 matrix:
   fast_finish: true
@@ -20,9 +20,6 @@ addons:
     packages:
       - nginx
       - realpath
-#  hosts:
-#      - localhost
-#      - test.dev
 
 install:
 #  - composer install
@@ -30,4 +27,4 @@ install:
 
 script:
   - curl -vsf 'http://localhost:8080/hello.php' &> /dev/stdout
-  - sudo cat /tmp/error.log
+  - cat /tmp/error.log
