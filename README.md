@@ -14,11 +14,11 @@ I can save someone some hassle trying to get Nginx set up for their project.
 
 ## How the install works.
 
-All of the installation files are located in the [/travis]() directory. The main installation is done through the
-[install-nginx.sh]() bash script. It's a short script so it should be relatively easy to follow. The other scripts are
+All of the installation files are located in the [/travis](./travis) directory. The main installation is done through the
+[install-nginx.sh](./travis/install-nginx.sh) bash script. It's a short script so it should be relatively easy to follow. The other scripts are
 basic Nginx and php-fpm configuration templates. The basic install process goes as follows:
 
-1. Install Nginx using the [apt addon]() via entries in the [.travis.yml]() file.
+1. Install Nginx using the [apt addon](https://docs.travis-ci.com/user/installing-dependencies/#Installing-Packages-with-the-APT-Addon) via entries in the [.travis.yml](./.travis.yml) file.
 2. Collect some useful information for the install into environment variables.
 3. Copy the configuration templates to a new directory while replacing placeholders with environment variables.
 4. Start php-fpm and Nginx with our custom configuration file instead of the default.
